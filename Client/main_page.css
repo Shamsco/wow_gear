@@ -1,0 +1,73 @@
+.main_container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+div.character_container{
+    width: 442px;
+    height: 513px;
+    position: relative;
+    border: 1px solid black
+}
+p.character_attribute{
+    margin: 2px;
+}
+
+p.character, p.specialization{
+    text-align: center;
+    border: 2px solid black;
+}
+
+p.character{
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+p.specialization{
+    border-top: 0;
+    margin-top: 0;
+}
+
+div.item-left{
+    position: absolute;
+    left: 0px;
+    top: 42px;
+}
+
+div.item-right{
+    position: absolute;
+    left: 390px;
+    top: 42px;
+}
+
+div.item-bottom{
+    position: absolute;
+    left: 140px;
+    top: 452px;
+    z-index: 3;
+}
+
+div.item-bottom .item-slot{
+    float: left;
+    display: block;
+    width: 55px;
+    height: 50px
+}
+
+div.item-slot{
+    height: 54px;
+    width: 60px;
+    margin: 1px 0 0 0;
+    position: relative;
+}
+
+div.item-slot a{
+    display: block;
+    position: relative;
+}
+
+p{
+    margin: 0;
+}

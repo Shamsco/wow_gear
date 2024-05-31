@@ -1,0 +1,46 @@
+- 
+    var class_colours = {
+        "Raxxareous": "#93c47d",
+        "Thakeel": "#7f6000",
+        "Bqarakabeera": "#ff7c0a",
+        "Asfar": "#ffffff",
+        "Abubaid": "#674ea7",
+        "Eruma": "#c41e3a",
+        "Gareeb": "#f48cba",
+        "Shashooka": "#1155cc",
+        "Mikfee": "#fff468",
+        "Abuportal": "#6d9eeb",
+        "Galisena": "#f48cba",
+        "Hanhar": "#ff7c0a"
+    }
+html 
+    head 
+        title main page 
+        link(rel="stylesheet" type="text/css" href="/static/main_page.css")
+        script(src="/static/main_page.js")
+        script(src="https://code.jquery.com/jquery-3.5.1.min.js")
+        script(src="http://cdn.cavernoftime.com/api/tooltip.js")
+    body 
+        div(class="main_container")
+            for item in JSON.parse(codes) 
+                div(class="character_container")
+                    p(class="character_attribute " + "CHARACTER" + " " + item["CHARACTER"] style="background-color: " + class_colours[item["CHARACTER"]] + ";")=item["CHARACTER"]
+                    p(class="character_attribute " + "SPECIALIZATION" + " " + item["SPECIALIZATION"] style="background-color: " + class_colours[item["CHARACTER"]] + ";")=item["SPECIALIZATION"]
+                    div(class="item-left")
+                        each val, key in item 
+                            if key === "HEAD_CODE" || key === "NECK_CODE" || key === "SHOULDER_CODE" || key === "CAPE_CODE" || key === "CHEST_CODE" || key === "WRIST_CODE"
+                                div(class="item-slot")
+                                    a(target="_blank" href="http://wotlk.cavernoftime.com/item=" + val)
+                                        p=val
+                    div(class="item-right")
+                        each val, key in item 
+                            if key === "GLOVES_CODE" || key === "BELT_CODE" || key === "LEGS_CODE" || key === "FEET_CODE" || key === "RING_1_CODE" || key === "RING_2_CODE" || key === "TRINKET_1_CODE" || key === "TRINKET_2_CODE"
+                                div(class="item-slot")
+                                    a(target="_blank" href="http://wotlk.cavernoftime.com/item=" + val)
+                                        p=val
+                    div(class="item-bottom")
+                        each val, key in item 
+                            if key === "MAIN_HAND_CODE" || key === "OFF_HAND_CODE" || key === "RELIC_CODE"
+                                div(class="item-slot")
+                                    a(target="_blank" href="http://wotlk.cavernoftime.com/item=" + val)
+                                        p=val
